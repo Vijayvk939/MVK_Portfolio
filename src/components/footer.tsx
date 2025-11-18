@@ -15,7 +15,7 @@ export function Footer() {
               </h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 Full Stack Developer passionate about building innovative web
-                applications with modern technologies. 
+                applications with modern technologies.
               </p>
             </div>
 
