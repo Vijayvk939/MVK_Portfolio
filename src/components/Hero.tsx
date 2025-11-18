@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
-import { Mail, Linkedin, Github, ExternalLink } from "lucide-react";
+import { Mail, ExternalLink } from "lucide-react";
+import LinkedinIconUrl from "/svgs/linkedin.svg";
+import GithubIconUrl from "/svgs/github.svg";
 import { Button } from "@/components/ui/button";
 
 export function Hero() {
@@ -67,19 +69,18 @@ export function Hero() {
                 </a>
               </Button>
 
-              <Button
-                variant="outline"
-                size="lg"
-                className="gap-2"
-                asChild
-              >
+              <Button variant="outline" size="lg" className="gap-2" asChild>
                 <a
                   href="https://linkedin.com/in/machavarapu-vijaya-kumar-3334ba1b6"
                   target="_blank"
                   rel="noopener noreferrer"
                   data-testid="link-contact-linkedin"
                 >
-                  <Linkedin className="w-4 h-4" />
+                  <img
+                    src={LinkedinIconUrl}
+                    alt="LinkedIn icon"
+                    className="w-4 h-4"
+                  />
                   LinkedIn
                   <ExternalLink className="w-3 h-3" />
                 </a>
@@ -108,7 +109,11 @@ export function Hero() {
                 className="text-muted-foreground hover:text-foreground transition-colors"
                 data-testid="link-linkedin-icon"
               >
-                <Linkedin className="w-5 h-5" />
+                <img
+                  src={LinkedinIconUrl}
+                  alt="LinkedIn icon"
+                  className="w-5 h-5"
+                />
               </a>
               <a
                 href="https://github.com"
@@ -117,7 +122,11 @@ export function Hero() {
                 className="text-muted-foreground hover:text-foreground transition-colors"
                 data-testid="link-github"
               >
-                <Github className="w-5 h-5" />
+                <img
+                  src={GithubIconUrl}
+                  alt="GitHub icon"
+                  className="w-5 h-5"
+                />
               </a>
             </motion.div>
           </motion.div>

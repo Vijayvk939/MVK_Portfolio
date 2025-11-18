@@ -1,4 +1,6 @@
-import { Mail, Linkedin, Github, PhoneCall } from "lucide-react";
+import { Mail, PhoneCall } from "lucide-react";
+import LinkedinIconUrl from "/svgs/linkedin.svg";
+import GithubIconUrl from "/svgs/github.svg";
 
 export function Footer() {
   return (
@@ -92,7 +94,11 @@ export function Footer() {
                     className="text-muted-foreground hover:text-foreground transition-colors"
                     data-testid="footer-link-linkedin"
                   >
-                    <Linkedin className="w-5 h-5" />
+                    <img
+                      src={LinkedinIconUrl}
+                      alt="LinkedIn icon"
+                      className="w-5 h-5"
+                    />
                   </a>
                   <a
                     href="https://github.com"
@@ -101,7 +107,11 @@ export function Footer() {
                     className="text-muted-foreground hover:text-foreground transition-colors"
                     data-testid="footer-link-github"
                   >
-                    <Github className="w-5 h-5" />
+                    <img
+                      src={GithubIconUrl}
+                      alt="GitHub icon"
+                      className="w-5 h-5"
+                    />
                   </a>
                 </div>
               </div>
