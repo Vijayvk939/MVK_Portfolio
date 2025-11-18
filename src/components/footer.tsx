@@ -1,4 +1,4 @@
-import { Mail, Linkedin, Github, Heart } from "lucide-react";
+import { Mail, Linkedin, Github, PhoneCall } from "lucide-react";
 
 export function Footer() {
   return (
@@ -69,6 +69,14 @@ export function Footer() {
               </h4>
               <div className="space-y-3">
                 <a
+                  href="tel:+919390343433"
+                  className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  data-testid="footer-link-phone"
+                >
+                  <PhoneCall className="w-4 h-4" />
+                  <span>+91 93902 32344</span>
+                </a>
+                <a
                   href="mailto:vijaymachavarapu.m@gmail.com"
                   className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
                   data-testid="footer-link-email"
@@ -108,9 +116,7 @@ export function Footer() {
                 reserved.
               </p>
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <span>Built with</span>
-                <Heart className="w-4 h-4 text-red-500 fill-red-500" />
-                <span>using React & Framer Motion</span>
+                <span>Built with using React & Tailwind CSS</span>
               </div>
             </div>
           </div>
