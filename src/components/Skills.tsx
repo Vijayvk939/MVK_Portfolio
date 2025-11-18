@@ -1,187 +1,184 @@
-import { Code, Server, Database as DatabaseIcon, Wrench, Palette, Shield } from 'lucide-react';
+import { motion } from "framer-motion";
+import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import {
+  Code2,
+  Database,
+  Server,
+  Wrench,
+  Palette,
+  Shield,
+} from "lucide-react";
 
-interface SkillCategory {
-  title: string;
-  icon: React.ReactNode;
-  skills: string[];
-  color: string;
-}
-
-const skillCategories: SkillCategory[] = [
+const skillCategories = [
   {
-    title: 'Frontend',
-    icon: <Code size={24} />,
-    skills: ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'React JS', 'Next JS', 'Bootstrap', 'Tailwind CSS'],
-    color: 'cyan',
+    title: "Frontend Development",
+    icon: Code2,
+    color: "from-blue-500 to-cyan-500",
+    skills: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "TypeScript",
+      "React.js",
+      "Next.js",
+      "Bootstrap",
+      "Tailwind CSS",
+    ],
   },
   {
-    title: 'Backend',
-    icon: <Server size={24} />,
-    skills: ['Node JS', 'Java', 'Python', 'REST APIs', 'WebSockets', 'Sequelize'],
-    color: 'blue',
+    title: "Backend Development",
+    icon: Server,
+    color: "from-green-500 to-emerald-500",
+    skills: ["Node.js", "Express.js", "RESTful APIs", "WebSockets"],
   },
   {
-    title: 'Database',
-    icon: <DatabaseIcon size={24} />,
-    skills: ['MySQL', 'MongoDB', 'MySQL Workbench'],
-    color: 'purple',
+    title: "Database",
+    icon: Database,
+    color: "from-purple-500 to-pink-500",
+    skills: ["MySQL", "MongoDB", "Sequelize", "MySQL Workbench"],
   },
   {
-    title: 'Tools & VCS',
-    icon: <Wrench size={24} />,
-    skills: ['Git', 'GitHub', 'Postman', 'Visual Studio Code', 'AWS S3', 'Nodemailer'],
-    color: 'green',
+    title: "Development Tools",
+    icon: Wrench,
+    color: "from-orange-500 to-yellow-500",
+    skills: [
+      "Git",
+      "GitHub",
+      "Visual Studio Code",
+      "Postman",
+      "AWS S3",
+      "Nodemailer",
+    ],
   },
   {
-    title: 'Creative',
-    icon: <Palette size={24} />,
-    skills: ['Adobe Photoshop', 'Adobe Premiere Pro', 'Adobe After Effects', 'Adobe XD', 'MS Office'],
-    color: 'pink',
+    title: "Creative Skills",
+    icon: Palette,
+    color: "from-pink-500 to-rose-500",
+    skills: [
+      "Adobe Photoshop",
+      "Adobe Premiere Pro",
+      "Adobe After Effects",
+      "Adobe XD",
+      "MS Office",
+    ],
   },
   {
-    title: 'Security',
-    icon: <Shield size={24} />,
-    skills: ['Ethical Hacking (Intermediate)'],
-    color: 'red',
+    title: "Additional Skills",
+    icon: Shield,
+    color: "from-indigo-500 to-violet-500",
+    skills: ["Ethical Hacking (Intermediate)", "API Testing", "Version Control"],
   },
 ];
 
-const softSkills = [
-  'Good communication and interpersonal skills',
-  'Teamwork',
-  'Time Management',
-  'Willingness to learn new things',
-  'Quick learner',
-  'Comfortable working independently and in teams',
-];
-
-function Skills() {
-  const getColorClasses = (color: string) => {
-    const colors: Record<string, string> = {
-      cyan: 'border-cyan-500/20 hover:border-cyan-500/50 hover:shadow-cyan-500/20',
-      blue: 'border-blue-500/20 hover:border-blue-500/50 hover:shadow-blue-500/20',
-      purple: 'border-purple-500/20 hover:border-purple-500/50 hover:shadow-purple-500/20',
-      green: 'border-green-500/20 hover:border-green-500/50 hover:shadow-green-500/20',
-      pink: 'border-pink-500/20 hover:border-pink-500/50 hover:shadow-pink-500/20',
-      red: 'border-red-500/20 hover:border-red-500/50 hover:shadow-red-500/20',
-    };
-    return colors[color];
-  };
-
-  const getIconColorClass = (color: string) => {
-    const colors: Record<string, string> = {
-      cyan: 'text-cyan-400',
-      blue: 'text-blue-400',
-      purple: 'text-purple-400',
-      green: 'text-green-400',
-      pink: 'text-pink-400',
-      red: 'text-red-400',
-    };
-    return colors[color];
-  };
-
+export function Skills() {
   return (
-    <section id="skills" className="relative py-24 px-6 bg-gradient-to-b from-gray-900 via-black to-gray-900 overflow-hidden">
-      {/* Background effects */}
-      <div className="absolute inset-0 grid-pattern opacity-15" />
-      <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl" />
-      
-      <div className="max-w-7xl mx-auto relative z-10">
-        <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center">
-          <span className="relative inline-block">
-            <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent animate-shimmer bg-[length:200%_auto]">
-              Technical Skills
-            </span>
-            <span className="absolute inset-0 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent opacity-30 blur-xl">
-              Technical Skills
-            </span>
-          </span>
-        </h2>
+    <section
+      id="skills"
+      className="relative py-24 md:py-32 bg-muted/20 overflow-hidden"
+    >
+      <div className="absolute inset-0 bg-grid-pattern opacity-10" />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+      <div className="container mx-auto px-4 relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <span className="bg-gradient-to-r from-blue-600 to-purple-600 dark:from-cyan-400 dark:to-pink-400 bg-clip-text text-transparent">
+              Technical Skills
+            </span>
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            A comprehensive toolkit for building modern web applications
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
           {skillCategories.map((category, index) => (
-            <div
+            <motion.div
               key={index}
-              className="group relative perspective-1000 transform-3d"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ y: -5 }}
+              data-testid={`skill-category-${index}`}
             >
-              <div className="relative h-full transform transition-all duration-500 group-hover:scale-105 group-hover:-translate-y-1">
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-blue-500/10 to-purple-500/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                
-                <div className={`relative glass-strong rounded-2xl p-6 border transition-all duration-500 hover:shadow-2xl overflow-hidden h-full ${getColorClasses(
-                  category.color
-                )}`}>
-                  {/* Holographic overlay */}
-                  <div className="absolute inset-0 holographic opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-                  
-                  {/* Corner accents */}
-                  <div className="absolute top-0 left-0 w-12 h-12 border-t-2 border-l-2 border-cyan-500/30 rounded-tl-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="absolute bottom-0 right-0 w-12 h-12 border-b-2 border-r-2 border-purple-500/30 rounded-br-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  
-                  <div className="relative z-10">
-                    <div className="flex items-center gap-3 mb-6">
-                      <div className={`relative ${getIconColorClass(category.color)}`}>
-                        <div className="absolute inset-0 blur-lg opacity-50 group-hover:opacity-100 transition-opacity duration-300">
-                          {category.icon}
-                        </div>
-                        <div className="relative transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
-                          {category.icon}
-                        </div>
-                      </div>
-                      <h3 className="text-xl font-bold text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-blue-500 group-hover:bg-clip-text transition-all duration-300">
-                        {category.title}
-                      </h3>
-                    </div>
-
-                    <div className="flex flex-wrap gap-2">
-                      {category.skills.map((skill, idx) => (
-                        <span
-                          key={idx}
-                          className="group/skill relative px-3 py-1.5 glass rounded-lg border border-gray-700/50 hover:border-cyan-500/50 text-sm text-gray-300 hover:text-cyan-300 transition-all duration-300 overflow-hidden"
-                        >
-                          <span className="relative z-10">{skill}</span>
-                          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 via-cyan-500/10 to-cyan-500/0 translate-x-[-100%] group-hover/skill:translate-x-[100%] transition-transform duration-500" />
-                        </span>
-                      ))}
-                    </div>
+              <Card className="p-6 h-full backdrop-blur-md bg-card/80 border-card-border hover-elevate group">
+                <div className="mb-4">
+                  <div
+                    className={`inline-flex p-3 rounded-lg bg-gradient-to-br ${category.color} mb-3`}
+                  >
+                    <category.icon className="w-6 h-6 text-white" />
                   </div>
+                  <h3 className="text-xl font-semibold mb-2 group-hover:text-blue-600 dark:group-hover:text-cyan-400 transition-colors">
+                    {category.title}
+                  </h3>
                 </div>
-              </div>
-            </div>
+
+                <div className="flex flex-wrap gap-2">
+                  {category.skills.map((skill, i) => (
+                    <Badge
+                      key={i}
+                      variant="secondary"
+                      className="font-medium text-xs"
+                    >
+                      {skill}
+                    </Badge>
+                  ))}
+                </div>
+              </Card>
+            </motion.div>
           ))}
         </div>
 
-        <div className="relative glass-strong rounded-2xl p-8 border border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-500 overflow-hidden">
-          {/* Holographic overlay */}
-          <div className="absolute inset-0 holographic opacity-50 pointer-events-none" />
-          
-          {/* Scan line effect */}
-          <div className="absolute inset-0 scan-line opacity-30 pointer-events-none" />
-          
-          <div className="relative z-10">
-            <h3 className="text-2xl md:text-3xl font-bold mb-8 text-center">
-              <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent neon-text">
-                Professional Skills
-              </span>
+        {/* Soft Skills */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="mt-16 max-w-4xl mx-auto"
+        >
+          <Card className="p-8 backdrop-blur-md bg-card/80 border-card-border">
+            <h3 className="text-2xl font-semibold mb-6 text-center">
+              Professional Skills
             </h3>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {softSkills.map((skill, index) => (
-                <div 
-                  key={index} 
-                  className="group flex items-center gap-3 p-3 glass rounded-lg border border-gray-700/30 hover:border-cyan-500/50 transition-all duration-300"
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {[
+                "Communication",
+                "Teamwork",
+                "Time Management",
+                "Quick Learner",
+              ].map((skill, i) => (
+                <div
+                  key={i}
+                  className="text-center p-4 rounded-lg bg-muted/50 hover-elevate"
+                  data-testid={`soft-skill-${i}`}
                 >
-                  <span className="text-cyan-400 group-hover:scale-125 transition-transform duration-300 animate-pulse">▹</span>
-                  <span className="text-gray-300 group-hover:text-cyan-300 transition-colors duration-300">{skill}</span>
+                  <p className="font-medium">{skill}</p>
                 </div>
               ))}
             </div>
-          </div>
-        </div>
+          </Card>
+        </motion.div>
       </div>
+
+      <style>{`
+        .bg-grid-pattern {
+          background-image: linear-gradient(
+              to right,
+              hsl(var(--border)) 1px,
+              transparent 1px
+            ),
+            linear-gradient(to bottom, hsl(var(--border)) 1px, transparent 1px);
+          background-size: 50px 50px;
+        }
+      `}</style>
     </section>
   );
 }
-
-export default Skills;
