@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, ExternalLink } from "lucide-react";
+import { Mail, ExternalLink, Download } from "lucide-react";
 import LinkedinIconUrl from "/svgs/linkedin.svg";
 import GithubIconUrl from "/svgs/github.svg";
 import { Button } from "@/components/ui/button";
@@ -83,6 +83,17 @@ export function Hero() {
                   />
                   LinkedIn
                   <ExternalLink className="w-3 h-3" />
+                </a>
+              </Button>
+
+              <Button variant="secondary" size="lg" className="gap-2" asChild>
+                <a
+                  href="/Resume/Vijay_ResumeU.pdf"
+                  download="Vijay_ResumeU.pdf"
+                  data-testid="link-resume-download"
+                >
+                  <Download className="w-4 h-4" />
+                  Download Resume
                 </a>
               </Button>
             </motion.div>

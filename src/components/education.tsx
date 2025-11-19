@@ -6,8 +6,8 @@ const education = [
   {
     degree: "Bachelor of Technology",
     institution: "Amrita Sai Engineering College",
-    duration: "2019 - 2023",
-    gpa: "6.0 CGPA",
+    duration: "2019 - 2024",
+    gpa: "6.3 CGPA",
   },
   {
     degree: "Board of Intermediate Education",
