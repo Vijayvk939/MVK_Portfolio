@@ -71,6 +71,7 @@ const skillCategories = [
   },
 ];
 
+// Skills component
 export function Skills() {
   return (
     <section

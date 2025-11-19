@@ -4,6 +4,7 @@ import LinkedinIconUrl from "/svgs/linkedin.svg";
 import GithubIconUrl from "/svgs/github.svg";
 import { Button } from "@/components/ui/button";
 
+// Hero component
 export function Hero() {
   return (
     <section id="about" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
